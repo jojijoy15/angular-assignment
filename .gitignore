@@ -1,0 +1,15 @@
+## Node modules
+node_modules
+
+## No log files
+**.log
+
+## No package-lock.json
+package-lock.json
+
+## No .DSstore
+.DS_Store
+
+## No angular specific folder
+.angular
+dist
