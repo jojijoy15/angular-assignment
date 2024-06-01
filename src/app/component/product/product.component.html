@@ -1,0 +1,11 @@
+<div class="product-container">
+    <div>
+        <img [src]="productInfo.thumbnail">
+    </div>
+    <div>
+        <span> {{ productInfo.brand }} </span>
+        <span> {{ productInfo.title }} </span>    
+    </div>
+    <app-price-detail [productInfo]="productInfo" [currencyInfo] = "currencyInfo" ></app-price-detail>
+    <app-rating [rating]="productInfo.rating"></app-rating>
+</div>

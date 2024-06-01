@@ -1,0 +1,14 @@
+img {
+    width: 300px;
+    height: 250px;
+}
+
+span {
+    font-weight: bold;
+}
+
+.product-container {
+    margin: 10px;
+    padding: 10px;
+    height: 300px;
+}

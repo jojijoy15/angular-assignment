@@ -1,0 +1,9 @@
+<div>
+    <label for="currency-code">Select your currency : </label>
+    <select name="currency" id="currency-code" 
+    (change)="saveCurrencyCodeOnChange($event)">
+        @for(rate of currencyCodes; track $index) {
+        <option value={{rate}}>{{ rate }}</option>
+        }
+    </select>
+</div>

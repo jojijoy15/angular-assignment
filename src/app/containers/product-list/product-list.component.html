@@ -1,0 +1,11 @@
+<div class="products-container">
+    @for(product of inventory | productsFilter:sidePanelDetail ;track product.id) {
+        <app-product 
+        [productInfo]="product" 
+        [currencyInfo]="currencyInfo"
+        >
+        </app-product>
+    }@empty {
+        <h3>Sorry No products for your filter found</h3>
+    }
+</div>

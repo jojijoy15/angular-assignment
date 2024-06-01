@@ -1,0 +1,18 @@
+<div>
+    <span class="discount-price"> 
+        {{ 
+           getProductPrice() | discount : productInfo.discountPercentage | currency : currencyInfo.code
+         }}
+    </span>
+    <span class="actual-price"> 
+        {{ 
+            getProductPrice() | currency : currencyInfo.code
+        }}
+     </span>
+    <span class="discount-percentage"> 
+        {{ 
+            productInfo.discountPercentage/100 | percent : '1.0-0' 
+        }} off 
+    </span>
+    <!-- Rounding of discount percent-->
+</div> 

@@ -1,0 +1,15 @@
+.discount-percentage {
+    font-weight: bold;
+    color: green;
+    font-size: 15px;
+}
+
+.actual-price {
+    text-decoration: line-through;
+    color: grey;
+}
+
+span {
+    font-weight: bold;
+    margin: 5px;
+}
