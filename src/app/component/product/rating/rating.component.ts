@@ -12,11 +12,5 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 export class RatingComponent {
 
   @Input() rating!: number;
-  isPartialRating!:boolean;
 
-  getRating() {
-    let floor = Math.floor(this.rating);
-    this.isPartialRating = this.rating - floor > 0 ? true : false
-    return floor;
-  }
 }

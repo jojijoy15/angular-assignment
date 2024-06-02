@@ -1,11 +1,10 @@
-<div class="product-container">
-    <div>
-        <img [src]="productInfo.thumbnail">
-    </div>
-    <div>
-        <span> {{ productInfo.brand }} </span>
-        <span> {{ productInfo.title }} </span>    
-    </div>
-    <app-price-detail [productInfo]="productInfo" [currencyInfo] = "currencyInfo" ></app-price-detail>
-    <app-rating [rating]="productInfo.rating"></app-rating>
-</div>
+<mat-card class="product-container">
+    <img mat-card-image [src]="productInfo.thumbnail">
+    <mat-card-content>
+        <div>
+            <span> {{ productInfo.title }} </span>
+        </div>
+        <app-rating [rating]="productInfo.rating"></app-rating>
+        <app-price-detail [productInfo]="productInfo" [currencyInfo] = "currencyInfo" ></app-price-detail>
+    </mat-card-content>
+</mat-card>

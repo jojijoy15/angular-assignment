@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import {MatSliderModule} from '@angular/material/slider';
-import { PriceRangeComponent } from './price-range/price-range.component';
+import { ProductFilterComponent } from './product-filter/product-filter.component';
 
 @Component({
   selector: 'app-side-panel',
   standalone: true,
-  imports: [PriceRangeComponent],
+  imports: [ProductFilterComponent],
   templateUrl: './side-panel.component.html',
   styleUrl: './side-panel.component.css'
 })

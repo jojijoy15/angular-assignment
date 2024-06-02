@@ -10,9 +10,10 @@ export class ProductsFilterPipe implements PipeTransform {
 
   transform(products: ProductType[], sidePanelDetails: SidePanelDetails): ProductType[] {
     if(products) {
+      console.log(sidePanelDetails.rating)
        let filteredProducts = products.filter(
           e =>  e.price >= sidePanelDetails.start && e.price <= sidePanelDetails.end
-              && e.rating >= sidePanelDetails.rating 
+              && e.rating >= Math.min(...sidePanelDetails.rating)
         )
         return [...filteredProducts];
     }

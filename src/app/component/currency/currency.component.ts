@@ -1,13 +1,16 @@
-import { Component, EventEmitter, OnInit, Output, inject } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CurrencyStoreService } from '../../services/currency-store.service';
-import { BehaviorSubject } from 'rxjs';
-import { MatOptionSelectionChange } from '@angular/material/core';
+import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { FormsModule } from '@angular/forms';
+
 
 @Component({
   selector: 'app-currency',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, MatFormFieldModule, MatSelectModule, MatInputModule, FormsModule],
   templateUrl: './currency.component.html',
   styleUrl: './currency.component.css',
   providers: []

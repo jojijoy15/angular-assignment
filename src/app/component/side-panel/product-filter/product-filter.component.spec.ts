@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PriceRangeComponent } from './price-range.component';
+import { ProductFilterComponent } from './product-filter.component';
 
-describe('PriceRangeComponent', () => {
-  let component: PriceRangeComponent;
-  let fixture: ComponentFixture<PriceRangeComponent>;
+describe('ProductFilterComponent', () => {
+  let component: ProductFilterComponent;
+  let fixture: ComponentFixture<ProductFilterComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PriceRangeComponent]
+      imports: [ProductFilterComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(PriceRangeComponent);
+    fixture = TestBed.createComponent(ProductFilterComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

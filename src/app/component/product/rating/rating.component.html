@@ -1,8 +1,4 @@
-<div matTooltip={{rating}} matTooltipPositionAtOrigin=true>
-    @for(count of [].constructor(getRating()); track $index) {
-        <mat-icon fontIcon="star"></mat-icon>
-    }
-    @if(isPartialRating) {
-        <mat-icon fontIcon="star_half" ></mat-icon>
-    }
+<div class="rating-container">
+    <span> {{rating}} </span>
+    <mat-icon fontIcon="star"/>
 </div>

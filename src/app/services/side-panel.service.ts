@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 import { SidePanelDetails } from './model/side-panel-details.type';
 
 @Injectable({
@@ -11,7 +11,7 @@ export class SidePanelService {
     start: 0,
     end: 10000,
     productName: "",
-    rating:0
+    rating: [1]
   };
 
   sidePanelSubject = new BehaviorSubject(this.intialSidePanelDetails);
