@@ -1,0 +1,41 @@
+.product-filter-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 240px;
+}
+
+.price-range-filter-container {
+    display: flex;
+    flex-direction: column;
+    min-width: 190px;
+    padding:10px;
+    border: 1px solid #070f4e;
+    background-color: #fff;
+;
+}
+
+.price-range-filter-label-container {
+    display: flex;
+    justify-content: space-between;
+    padding-left:5px
+}
+
+.customer-ratings-selector-container {
+    width: 240px;
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+.filter-label {
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 5px
+}
+
+#price-range-slider-id-1 {
+    width: 90%;
+}

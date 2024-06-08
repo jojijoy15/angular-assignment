@@ -4,7 +4,7 @@ import { ProductComponent } from '../product.component';
 import { CommonModule } from '@angular/common';
 import { DiscountPipe } from './pipes/discount.pipe';
 import { CurrencyStoreService } from '../../../services/currency-store.service';
-import { CurrencyRate } from '../../currency/models/currency.type';
+import { CurrencyRateInfo } from '../../currency/models/currency.type';
 
 @Component({
   selector: 'app-price-detail',
@@ -15,7 +15,7 @@ import { CurrencyRate } from '../../currency/models/currency.type';
 })
 export class PriceDetailComponent implements OnInit {
 
-  @Input() currencyInfo!: CurrencyRate;
+  @Input() currencyInfo!: CurrencyRateInfo;
   @Input() productInfo!: ProductType;
 
 

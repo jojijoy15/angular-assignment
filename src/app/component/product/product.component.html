@@ -6,5 +6,6 @@
         </div>
         <app-rating [rating]="productInfo.rating"></app-rating>
         <app-price-detail [productInfo]="productInfo" [currencyInfo] = "currencyInfo" ></app-price-detail>
+        <mat-chip> {{ productInfo.category }}</mat-chip>
     </mat-card-content>
 </mat-card>

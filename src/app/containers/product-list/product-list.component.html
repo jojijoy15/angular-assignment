@@ -1,11 +1,18 @@
-<div class="products-container">
-    @for(product of inventory | productsFilter:sidePanelDetail ;track product.id) {
-        <app-product 
-        [productInfo]="product" 
-        [currencyInfo]="currencyInfo"
-        >
-        </app-product>
-    }@empty {
-        <h3>Sorry No products for your filter found</h3>
-    }
-</div>
+@if(loading) {
+    <div class="loading-container">
+        <mat-spinner class="center-spinner" color="primary" mode="indeterminate"/>
+    </div>
+}
+
+@if(inventory) {
+    <div class="products-container" >
+        @for(product of inventory | productsFilter:sidePanelDetail | sort:'rating';track product.id) {
+            <app-product [productInfo]="product" [currencyInfo]="currencyInfo"/>
+        } @empty {
+            <div class="no-products-container">
+                <img mat-card-image [src]="'assets/no-products-found.avif'" class="no-products-img">
+                <p><b>OOPS!</b>, we can't find products for your applied filter.</p>
+            </div>
+        }
+    </div>
+}

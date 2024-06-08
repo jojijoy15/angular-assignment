@@ -3,15 +3,16 @@ import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSliderModule } from '@angular/material/slider';
 import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatExpansionModule} from '@angular/material/expansion';
 import { SidePanelService } from '../../../services/side-panel.service';
 import { CurrencyStoreService } from '../../../services/currency-store.service';
-import { CurrencyRate } from '../../currency/models/currency.type';
+import { CurrencyRateInfo } from '../../currency/models/currency.type';
 import { Rating } from '../models/rating.type';
 
 @Component({
-  selector: 'app-price-range',
+  selector: 'app-product-filter',
   standalone: true,
-  imports: [MatSliderModule, ReactiveFormsModule, MatFormFieldModule, MatSelectModule, FormsModule],
+  imports: [MatSliderModule, ReactiveFormsModule, MatFormFieldModule, MatSelectModule, FormsModule, MatExpansionModule],
   templateUrl: './product-filter.component.html',
   styleUrl: './product-filter.component.css'
 })
@@ -29,7 +30,7 @@ export class ProductFilterComponent implements OnInit {
   endPriceRange: FormControl = new FormControl(3000); 
   rating: FormControl = new FormControl([]);
   
-  currencyInfo!:CurrencyRate;
+  currencyInfo!:CurrencyRateInfo;
   ratingOptions: Rating[] = [ 
     { 
       display: '4★ & above',
@@ -54,7 +55,7 @@ export class ProductFilterComponent implements OnInit {
   ngOnInit(): void {
     this.currencyService.currencyObservable.subscribe(
       data => {
-        this.currencyInfo = data as CurrencyRate;
+        this.currencyInfo = data as CurrencyRateInfo;
         this.startPriceMin = this.INITIAL_START_PRICE * this.currencyInfo.rate;
         this.endPriceMax = this.INITIAL_END_PRICE * this.currencyInfo.rate;
         this.step = this.INITIAL_STEP * this.currencyInfo.rate;
@@ -66,15 +67,15 @@ export class ProductFilterComponent implements OnInit {
   }
 
   checkDetails(event: Event) {
-    this.startPriceRange.valueChanges.subscribe(data => this.startPrice = data)
+    this.startPriceRange.valueChanges.subscribe(data => this.startPrice = data);
     this.endPriceRange.valueChanges.subscribe(data => this.endPrice = data);
     this.sidePanelService.updateProductDetails(this.createSidePanelDetails())
   }
 
   onRatingSelect() {
     this.rating.valueChanges.subscribe(data => {
-      if(data.length > 0) {
-        console.log(`rating selected ${data}`);
+      if(data && data.length > 0) {
+        //TODO fix rating filter issue
         this.ratings = [...data]
       } else {
         this.ratings = [1]
@@ -90,7 +91,6 @@ export class ProductFilterComponent implements OnInit {
       end: this.endPrice ??= 3000,
       productName: "",
       rating: this.ratings ??= [1]
-      //TODO fix rating filter issue
     }
   }
 

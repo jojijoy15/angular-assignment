@@ -9,10 +9,9 @@ import { CurrencyRate } from './model/currency-rate.type';
 export class CurrencyStoreService {
 
   private DEFAULT_CURRENCY_CODE:string = "INR";
-  private CURRENCY_CODE_STORAGE_KEY = "CURRENCY_CODE";
+  CURRENCY_CODE_STORAGE_KEY = "CURRENCY_CODE";
   private currencyCodesConfig = currencyRates;
-  private currencySubject = new BehaviorSubject
-  (this.currencyCodesConfig.at(0));
+  private currencySubject = new BehaviorSubject(this.currencyCodesConfig.at(0));
   currencyObservable = this.currencySubject.asObservable();
 
   updateCurrencyCode(currencyCode: string) {
@@ -24,10 +23,7 @@ export class CurrencyStoreService {
   fetchCurrencyCode() {
     let currencyCodeFromLocalStorage = localStorage.getItem(this.CURRENCY_CODE_STORAGE_KEY)
 
-    let currentCurrencyCode = currencyCodeFromLocalStorage 
-      ? currencyCodeFromLocalStorage 
-      : this.DEFAULT_CURRENCY_CODE;
-    
+    let currentCurrencyCode = currencyCodeFromLocalStorage ??= this.DEFAULT_CURRENCY_CODE;    
     this.currencySubject.next(this.fetchCurrencyInfo(currentCurrencyCode));
     
   }

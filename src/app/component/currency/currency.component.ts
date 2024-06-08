@@ -28,7 +28,7 @@ export class CurrencyComponent implements OnInit {
   }
 
 
-  saveCurrencyCodeOnChange(event: Event) {
+  updateCurrencyCodeOnChange(event: Event) {
     let select = event.target as HTMLSelectElement;
     this.saveCurrencyCode(select.value);
   }

@@ -9,7 +9,7 @@ export class InventoryService {
   constructor(private httpClient: HttpClient) {}
 
   fetchProducts() {
-    const dummyProductsUrl = 'https://dummyjson.com/products';
+    const dummyProductsUrl = 'https://dummyjson.com/products?limit=100';
     return this.httpClient.get<Inventory>(dummyProductsUrl, { responseType: 'json' })
   }
 }

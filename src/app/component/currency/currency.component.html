@@ -1,8 +1,10 @@
-<mat-form-field>
-    <mat-label>Select your currency</mat-label>
-    <select matNativeControl (change)="saveCurrencyCodeOnChange($event)">
-        @for(rate of currencyCodes; track $index) {
-        <option value={{rate}}>{{ rate }}</option>
-        }
-    </select>
-</mat-form-field>
+<div class="currency-container">
+    <mat-form-field>
+        <mat-label>Select your currency</mat-label>
+        <select matNativeControl (change)="updateCurrencyCodeOnChange($event)">
+            @for(rate of currencyCodes; track $index) {
+            <option value={{rate}}>{{ rate }}</option>
+            }
+        </select>
+    </mat-form-field>
+</div>
