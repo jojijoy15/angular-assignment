@@ -20,7 +20,6 @@ export class SortPipe implements PipeTransform {
         }
       });
     }
-    console.log(products)
     return products;
   }
 
